@@ -1,18 +1,39 @@
-import { DarkTheme, DefaultTheme, ThemeProvider } from 'expo-router';
-import * as SplashScreen from 'expo-splash-screen';
-import { useColorScheme } from 'react-native';
+import { useFonts } from "@expo-google-fonts/poppins";
+import { Stack, ThemeProvider } from "expo-router";
+import * as SplashScreen from "expo-splash-screen";
+import { useEffect } from "react";
 
-import { AnimatedSplashOverlay } from '@/components/animated-icon';
-import AppTabs from '@/components/app-tabs';
+import { PortalHost } from "@rn-primitives/portal";
+import { useColorScheme } from "react-native";
 
-SplashScreen.preventAutoHideAsync();
+import { poppinsFonts } from "@/constants/fonts";
+import { NAV_THEME } from "@/lib/theme";
 
-export default function TabLayout() {
+import "../../global.css";
+
+// Keep the launch screen visible until every Poppins weight used by typography is ready.
+void SplashScreen.preventAutoHideAsync();
+
+export default function RootLayout() {
   const colorScheme = useColorScheme();
+  const [fontsLoaded, fontError] = useFonts(poppinsFonts);
+
+  useEffect(() => {
+    if (fontsLoaded || fontError) {
+      void SplashScreen.hideAsync();
+    }
+  }, [fontError, fontsLoaded]);
+
+  if (!fontsLoaded && !fontError) {
+    return null;
+  }
+
   return (
-    <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-      <AnimatedSplashOverlay />
-      <AppTabs />
+    <ThemeProvider value={NAV_THEME[colorScheme === "dark" ? "dark" : "light"]}>
+      <Stack screenOptions={{ headerShown: false }}>
+        <Stack.Screen name="(tabs)" />
+      </Stack>
+      <PortalHost />
     </ThemeProvider>
   );
 }

@@ -1,0 +1,132 @@
+@import "tailwindcss";
+@import "uniwind";
+
+@theme {
+  --radius-card: 1.25rem;
+  --radius-button: 0.875rem;
+  --radius-input: 0.75rem;
+}
+
+@layer theme {
+  :root {
+    @variant light {
+      --color-primary: #087f5b;
+      --color-primary-foreground: #ffffff;
+      --color-primary-soft: #e8f7ef;
+
+      --color-background: #f7f9f8;
+      --color-surface: #ffffff;
+      --color-surface-secondary: #eff4f1;
+
+      --color-foreground: #172b24;
+      --color-muted: #64756d;
+      --color-border: #e1e9e4;
+
+      --color-income: #159f72;
+      --color-expense: #e05252;
+      --color-warning: #e9b44c;
+      --color-info: #3d88d8;
+      --color-tabbar: #ffffff;
+
+      --color-card: var(--color-surface);
+      --color-card-foreground: var(--color-foreground);
+      --color-popover: var(--color-surface);
+      --color-popover-foreground: var(--color-foreground);
+      --color-secondary: var(--color-surface-secondary);
+      --color-secondary-foreground: var(--color-foreground);
+      --color-muted-foreground: var(--color-muted);
+      --color-accent: var(--color-primary-soft);
+      --color-accent-foreground: var(--color-foreground);
+      --color-destructive: var(--color-expense);
+      --color-destructive-foreground: #ffffff;
+      --color-input: var(--color-border);
+      --color-ring: var(--color-primary);
+      --radius: var(--radius-input);
+
+      --background: #f7f9f8;
+      --foreground: #172b24;
+      --card: #ffffff;
+      --card-foreground: #172b24;
+      --popover: #ffffff;
+      --popover-foreground: #172b24;
+      --primary: #087f5b;
+      --primary-foreground: #ffffff;
+      --secondary: #eff4f1;
+      --secondary-foreground: #172b24;
+      --muted: #eff4f1;
+      --muted-foreground: #64756d;
+      --accent: #e8f7ef;
+      --accent-foreground: #172b24;
+      --destructive: #e05252;
+      --destructive-foreground: #ffffff;
+      --border: #e1e9e4;
+      --input: #e1e9e4;
+      --ring: #087f5b;
+      --chart-1: #159f72;
+      --chart-2: #3d88d8;
+      --chart-3: #087f5b;
+      --chart-4: #e9b44c;
+      --chart-5: #e05252;
+    }
+
+    @variant dark {
+      --color-primary: #34c993;
+      --color-primary-foreground: #082c20;
+      --color-primary-soft: #173e30;
+
+      --color-background: #0f1915;
+      --color-surface: #182720;
+      --color-surface-secondary: #23352b;
+
+      --color-foreground: #f1f8f3;
+      --color-muted: #a0b4a8;
+      --color-border: #304438;
+
+      --color-income: #4adc9f;
+      --color-expense: #ff7777;
+      --color-warning: #f2c66f;
+      --color-info: #76b5fa;
+      --color-tabbar: #182720;
+
+      --color-card: var(--color-surface);
+      --color-card-foreground: var(--color-foreground);
+      --color-popover: var(--color-surface);
+      --color-popover-foreground: var(--color-foreground);
+      --color-secondary: var(--color-surface-secondary);
+      --color-secondary-foreground: var(--color-foreground);
+      --color-muted-foreground: var(--color-muted);
+      --color-accent: var(--color-primary-soft);
+      --color-accent-foreground: var(--color-foreground);
+      --color-destructive: var(--color-expense);
+      --color-destructive-foreground: #ffffff;
+      --color-input: var(--color-border);
+      --color-ring: var(--color-primary);
+      --radius: var(--radius-input);
+
+      --background: #0f1915;
+      --foreground: #f1f8f3;
+      --card: #182720;
+      --card-foreground: #f1f8f3;
+      --popover: #182720;
+      --popover-foreground: #f1f8f3;
+      --primary: #34c993;
+      --primary-foreground: #082c20;
+      --secondary: #23352b;
+      --secondary-foreground: #f1f8f3;
+      --muted: #23352b;
+      --muted-foreground: #a0b4a8;
+      --accent: #173e30;
+      --accent-foreground: #f1f8f3;
+      --destructive: #ff7777;
+      --destructive-foreground: #082c20;
+      --border: #304438;
+      --input: #304438;
+      --ring: #34c993;
+      --chart-1: #4adc9f;
+      --chart-2: #76b5fa;
+      --chart-3: #34c993;
+      --chart-4: #f2c66f;
+      --chart-5: #ff7777;
+    }
+  }
+}

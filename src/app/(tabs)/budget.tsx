@@ -1,9 +1,11 @@
-import { Text, View } from "react-native";
+import { Text } from "react-native";
+
+import { ScreenContainer } from "@/components/layout/ScreenContainer";
 
 export default function BudgetScreen() {
   return (
-    <View className="flex-1 items-center justify-center bg-background">
+    <ScreenContainer className="items-center justify-center">
       <Text className="text-xl font-bold text-primary">Budget</Text>
-    </View>
+    </ScreenContainer>
   );
 }

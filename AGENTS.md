@@ -82,6 +82,7 @@ Docs: https://docs.expo.dev/eas/index.md
 
 ## Quality, Collaboration, and Commits
 
+- Use the two-environment Git flow: feature and fix branches merge into `dev` (development/staging), and only `dev` may merge into `main` (production). Never open a pull request directly from a feature or fix branch to `main`.
 - Keep each change focused; do not include unrelated refactors or generated files.
 - Apply the repository formatter when configured. Run formatting, linting, typechecking, relevant tests, and a targeted security review when applicable; report any unavailable or blocked check clearly.
 - Before making a material assumption about product behavior, security, architecture, data handling, or other risky behavior, ask the user a concise, structured question.

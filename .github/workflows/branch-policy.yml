@@ -1,0 +1,18 @@
+name: Branch policy
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  enforce-dev-source:
+    name: enforce-dev-source
+    runs-on: ubuntu-latest
+    steps:
+      - name: Require dev as the pull request source
+        run: |
+          if [ "${{ github.head_ref }}" != "dev" ]; then
+            echo "Only pull requests from dev may merge into main."
+            exit 1
+          fi
